@@ -11,30 +11,31 @@ class Game {
   draw() {
     this.background.playSound();
     this.background.draw();
-    this.player.drawLeft();
-    this.player.drawRight();
+    this.player.draw();
   }
 
   keyPressed() {
     if (keyCode === upArrow) {
-      this.player.jumpSound();
+      this.player.jumpSoundUp();
       this.player.jump();
     }
 
     if (keyCode === downArrow) {
-      this.player.jumpSound();
-      this.player.jump();
+      // this.player.jumpSound();
+      // this.player.jump();
     }
 
     if (keyCode === leftArrow) {
-      this.player.jumpSound();
-      this.player.jump();
-      this.player.drawRight();
+      console.log(keyCode);
+      // this.player.jumpSound();
+      // this.player.jump();
+      this.player.drawLeft();
     }
 
     if (keyCode === rightArrow) {
-      this.player.jumpSound();
-      this.player.jump();
+      // this.player.jumpSound();
+      console.log(keyCode);
+      this.player.drawRight();
     }
   }
 }
