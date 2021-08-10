@@ -26,7 +26,7 @@ class Game {
     }
 
     if (keyCode === leftArrow) {
-      console.log(keyCode);
+      // console.log(keyCode);
       // this.player.jumpSound();
       // this.player.jump();
       this.player.drawLeft();
@@ -34,7 +34,7 @@ class Game {
 
     if (keyCode === rightArrow) {
       // this.player.jumpSound();
-      console.log(keyCode);
+      // console.log(keyCode);
       this.player.drawRight();
     }
   }

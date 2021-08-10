@@ -1,12 +1,15 @@
 class Player {
   constructor() {
-    this.y = 500;
-    this.x = CANVAS_HEIGHT / 8;
+    this.y = 310;
+    this.x = 0;
     this.height = 70;
     this.width = 70;
-    this.velocity = 0;
+    this.velocity = 5;
+    this.rightBoundary = CANVAS_WIDTH - this.width;
+    this.bottomBoundary = CANVAS_HEIGHT - this.height;
   }
 
+  // Called when press up arrow
   jump() {
     this.y -= 20;
     this.velocity -= 5;
@@ -15,21 +18,31 @@ class Player {
   draw() {
     this.velocity += GRAVITY;
     this.y += this.velocity;
+    this.maintainBoundaries();
 
     // image(mario, 0, 310, this.width, this.height);
     // if (this.y === 310 && this.x === 150) {
     //   image(mario, 0, 310, this.width, this.height);
     // }
 
-    // image(mario, this.x, this.y, this.width, this.height);
-    if (this.x > 100) {
-      image(mario, this.x, 310, this.width, this.height);
+    image(mario, this.x, this.y, this.width, this.height);
+    // if (this.x > 100) {
+    //   image(mario, this.x, 310, this.width, this.height);
+    // }
+
+    // Logic for the starting position block
+    if (this.x < 215 && this.y > 310) {
+      this.velocity = 0;
+      this.y = 310;
+    } else if (this < 215 && this.y) {
     }
 
     if (this.y >= 470) {
+      //if charachter hits the flames, it will jump up, deduct 1 point from health;
       this.burn();
       this.y = this.floor;
-      this.velocity = -10;
+      this.velocity = -8;
+      this.health();
     }
   }
 
@@ -37,17 +50,30 @@ class Player {
     return 500 - this.height;
   }
 
+  // side boundaries are locked
+  maintainBoundaries() {
+    if (this.x >= this.rightBoundary) {
+      //   this.x = this.rightBoundary;
+      this.x = this.rightBoundary;
+    }
+    if (this.y >= this.bottomBoundary) {
+      //   this.y = this.bottomBoundary;
+      this.y = 0;
+    }
+    if (this.x < 0) {
+      this.x = 0;
+    }
+    if (this.y < 0) {
+    }
+  }
+
   drawRight() {
-    this.x += CANVAS_HEIGHT / 60;
+    this.x += 40;
   }
 
   drawLeft() {
-    this.x -= CANVAS_HEIGHT / 8;
+    this.x -= 40;
   }
-
-  // drawRight() {
-  //   image(leftMario, this.x, this.y, this.width, this.height);
-  // }
 
   jumpSoundUp() {
     let jumpSound = document.getElementsByClassName("jump-sound")[0];
@@ -60,4 +86,16 @@ class Player {
       burnSound.play();
     }
   }
+
+  health() {
+    health--;
+    console.log(health);
+    if (health < 0) {
+      // this.death();
+    }
+  }
+
+  //   death() {
+  //     alert("you are dead!");
+  //   }
 }

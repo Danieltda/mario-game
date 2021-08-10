@@ -8,9 +8,11 @@ let leftMario;
 let lava;
 let brick;
 
-const GRAVITY = 0.26;
+const GRAVITY = 0.15;
 
 const upArrow = 38;
 const downArrow = 40;
 const leftArrow = 37;
 const rightArrow = 39;
+
+let health = 5;
