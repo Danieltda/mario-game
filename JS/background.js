@@ -17,6 +17,8 @@ class Background {
     }
     image(lava, 0, 470, CANVAS_WIDTH, CANVAS_HEIGHT);
     image(brick, 0, 380, 0, 0);
+    image(brick2, 300, 280, 70, 70);
+    image(brick3, 600, 300, 70, 70);
   }
 
   playSound() {

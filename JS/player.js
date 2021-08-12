@@ -11,7 +11,7 @@ class Player {
 
   // Called when press up arrow
   jump() {
-    this.y -= 50;
+    this.y -= 70;
     console.log(this.y);
     this.velocity -= 5;
     console.log(this.velocity);

@@ -12,12 +12,14 @@ class Game {
     this.background.playSound();
     this.background.draw();
     this.player.draw();
+
+    // movement player left and right
     if (keyIsDown(LEFT_ARROW)) {
-      this.player.x -= 2;
+      this.player.x -= 3;
     }
 
     if (keyIsDown(RIGHT_ARROW)) {
-      this.player.x += 2;
+      this.player.x += 3;
     }
   }
 
