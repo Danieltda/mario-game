@@ -24,10 +24,14 @@ class Game {
   }
 
   keyPressed() {
+    // if (spacebarPressed.length < 3) {
     if (keyCode === spaceBar) {
       this.player.jumpSoundUp();
       this.player.jump();
     }
+    // } else if (spacebarPressed.length >= 3) {
+    //   spacebarPressed = [];
+    // }
 
     if (keyCode === downArrow) {
       // this.player.jumpSound();

@@ -11,8 +11,10 @@ class Player {
 
   // Called when press up arrow
   jump() {
+    // spacebarPressed.push(keyCode);
+    // console.log(spacebarPressed);
     if (this.y > 100) {
-      this.y -= 70;
+      this.y -= 30;
       this.velocity -= 5;
     }
   }
@@ -42,8 +44,11 @@ class Player {
     if (this.y >= 470) {
       //if charachter hits the flames, it will jump up, deduct 1 point from health;
       this.burn();
-      this.y = this.floor;
+      // this.y = this.floor;
       this.velocity = -11;
+      if (this.y >= 430 && this.y < 80) {
+        !this.jump();
+      }
       this.health();
     }
   }

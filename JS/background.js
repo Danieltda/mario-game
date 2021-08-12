@@ -28,3 +28,5 @@ class Background {
     audio.play();
   }
 }
+
+const getButton = document.getElementsByClassName("game-instructions");

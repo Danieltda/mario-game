@@ -1,0 +1,15 @@
+* {
+  background-color: rgb(55, 155, 232);
+}
+
+.game-instructions {
+  background-color: white;
+  color: black;
+  margin-bottom: 3px;
+  border-color: yellow;
+}
+
+.score {
+  color: black;
+  border-color: yellow;
+}

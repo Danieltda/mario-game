@@ -1,4 +1,4 @@
-const CANVAS_HEIGHT = 620;
+const CANVAS_HEIGHT = 600;
 
 const CANVAS_WIDTH = 1200;
 let bgImage;
@@ -16,4 +16,6 @@ const leftArrow = 37;
 const rightArrow = 39;
 const spaceBar = 32;
 
-let health = 5;
+let health = 2;
+
+let spacebarPressed = [];
