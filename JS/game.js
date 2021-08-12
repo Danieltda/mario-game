@@ -12,6 +12,13 @@ class Game {
     this.background.playSound();
     this.background.draw();
     this.player.draw();
+    if (keyIsDown(LEFT_ARROW)) {
+      this.player.x -= 2;
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+      this.player.x += 2;
+    }
   }
 
   keyPressed() {
@@ -25,17 +32,17 @@ class Game {
       // this.player.jump();
     }
 
-    if (keyCode === leftArrow) {
-      // console.log(keyCode);
-      // this.player.jumpSound();
-      // this.player.jump();
-      this.player.drawLeft();
-    }
+    // if (keyCode === leftArrow) {
+    //   // console.log(keyCode);
+    //   // this.player.jumpSound();
+    //   // this.player.jump();
+    //   this.player.drawLeft();
+    // }
 
-    if (keyCode === rightArrow) {
-      // this.player.jumpSound();
-      // console.log(keyCode);
-      this.player.drawRight();
-    }
+    // if (keyCode === rightArrow) {
+    //   // this.player.jumpSound();
+    //   // console.log(keyCode);
+    //   this.player.drawRight();
+    // }
   }
 }

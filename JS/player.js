@@ -11,8 +11,10 @@ class Player {
 
   // Called when press up arrow
   jump() {
-    this.y -= 20;
+    this.y -= 50;
+    console.log(this.y);
     this.velocity -= 5;
+    console.log(this.velocity);
   }
 
   draw() {
@@ -41,7 +43,7 @@ class Player {
       //if charachter hits the flames, it will jump up, deduct 1 point from health;
       this.burn();
       this.y = this.floor;
-      this.velocity = -8;
+      this.velocity = -13;
       this.health();
     }
   }
@@ -64,16 +66,21 @@ class Player {
       this.x = 0;
     }
     if (this.y < 0) {
+      this.velocity += 0.5;
     }
   }
 
-  drawRight() {
-    this.x += 40;
-  }
+  // drawRight() {
+  //   // this.velocity += 20;
+  //   // this.x += this.velocity;
+  //   this.x += 30;
+  // }
 
-  drawLeft() {
-    this.x -= 40;
-  }
+  // drawLeft() {
+  //   // this.velocity += 20;
+  //   // this.x -= this.velocity;
+  //   this.x -= 30;
+  // }
 
   jumpSoundUp() {
     let jumpSound = document.getElementsByClassName("jump-sound")[0];
