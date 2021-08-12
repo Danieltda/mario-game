@@ -24,7 +24,7 @@ class Game {
   }
 
   keyPressed() {
-    if (keyCode === upArrow) {
+    if (keyCode === spaceBar) {
       this.player.jumpSoundUp();
       this.player.jump();
     }

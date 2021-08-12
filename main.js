@@ -16,6 +16,7 @@ function preload() {
   brick2 = loadImage("./assets/brick2.JPG");
   brick3 = loadImage("./assets/brick 3.JPG");
   brickQuestionMark = loadImage("./assets/brickQuestionMark.JPG");
+
   // leftMario = loadImage("/assets/leftMario.png");
 }
 

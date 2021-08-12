@@ -11,10 +11,10 @@ class Player {
 
   // Called when press up arrow
   jump() {
-    this.y -= 70;
-    console.log(this.y);
-    this.velocity -= 5;
-    console.log(this.velocity);
+    if (this.y > 100) {
+      this.y -= 70;
+      this.velocity -= 5;
+    }
   }
 
   draw() {
@@ -43,7 +43,7 @@ class Player {
       //if charachter hits the flames, it will jump up, deduct 1 point from health;
       this.burn();
       this.y = this.floor;
-      this.velocity = -13;
+      this.velocity = -11;
       this.health();
     }
   }

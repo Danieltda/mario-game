@@ -14,5 +14,6 @@ const upArrow = 38;
 const downArrow = 40;
 const leftArrow = 37;
 const rightArrow = 39;
+const spaceBar = 32;
 
 let health = 5;
