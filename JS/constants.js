@@ -19,3 +19,6 @@ const spaceBar = 32;
 let health = 2;
 
 let spacebarPressed = [];
+
+const getButton = document.getElementsByClassName("game-instructions");
+const jumpsLeft = document.getElementsByClassName("jumpsleft");

@@ -7,16 +7,21 @@ class Player {
     this.velocity = 5;
     this.rightBoundary = CANVAS_WIDTH - this.width;
     this.bottomBoundary = CANVAS_HEIGHT - this.height;
+    this.jumps = 10;
   }
 
   // Called when press up arrow
   jump() {
-    // spacebarPressed.push(keyCode);
-    // console.log(spacebarPressed);
+    spacebarPressed.push(keyCode);
     if (this.y > 100) {
-      this.y -= 30;
+      this.y -= 7;
       this.velocity -= 5;
     }
+
+    // this.jumps -= 1;
+    // console.log(this.jumps);
+
+    // jumpsLeft.innerText = this.jumps;
   }
 
   draw() {
@@ -35,17 +40,34 @@ class Player {
     // }
 
     // Logic for the starting position block
-    if (this.x < 215 && this.y > 310) {
+    if (this.x < 218 && this.y > 300 && this.y < 350) {
       this.velocity = 0;
       this.y = 310;
-    } else if (this < 215 && this.y) {
+    }
+
+    //Brick number 2
+    if (this.x >= 279 && this.x < 350 && this.y > 210 && this.y < 240) {
+      this.velocity = 0;
+      this.y = 210;
+    }
+
+    //brick number 3
+    if (this.x >= 470 && this.x < 544 && this.y > 320 && this.y < 350) {
+      this.velocity = 0;
+      this.y = 330;
+    }
+
+    //brick number 4
+    if (this.x >= 770 && this.x < 1025 && this.y > 370 && this.y < 400) {
+      this.velocity = 0;
+      this.y = 380;
     }
 
     if (this.y >= 470) {
       //if charachter hits the flames, it will jump up, deduct 1 point from health;
       this.burn();
       // this.y = this.floor;
-      this.velocity = -11;
+      this.velocity = -9;
       if (this.y >= 430 && this.y < 80) {
         !this.jump();
       }

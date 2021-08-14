@@ -18,9 +18,9 @@ class Background {
     image(lava, 0, 470, CANVAS_WIDTH, CANVAS_HEIGHT);
     image(brick, 0, 380, 0, 0);
     image(brick2, 300, 280, 70, 70);
-    image(brick3, 600, 300, 70, 70);
+    image(brick3, 500, 400, 70, 70);
     image(brickQuestionMark, 1100, 150, 50, 50);
-    image(brick, 400, 450, 0, 0);
+    image(brick, 800, 450, 0, 0);
   }
 
   playSound() {
@@ -28,5 +28,3 @@ class Background {
     audio.play();
   }
 }
-
-const getButton = document.getElementsByClassName("game-instructions");
