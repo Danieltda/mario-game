@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="rowFormat">
+      <div><button class="game-instructions">Game instructions</button></div>
+      <div class="health">
+        <h5>Health: <span></span></h5>
+      </div>
+      <div class="jumps">
+        <h6>Total jumps left: <span></span></h6>
+      </div>
+      <div>
+        <input
+          type="text"
+          readonly="readonly"
+          name="Score"
+          id=""
+          placeholder="COLLECT THE STAR"
+          class="score"
+        />
+      </div>
+    </div>
     <audio src="./assets/test.mp3"></audio>
     <audio src="./assets/sm64_mario_hoohoo.wav" class="jump-sound"></audio>
     <audio src="./assets//burn.wav" class="burn"></audio>
@@ -18,14 +37,5 @@
     <script src="./JS/player.js"></script>
     <script src="./JS/game.js"></script>
     <script src="./main.js"></script>
-    <button class="game-instructions">Game instructions</button>
-    <input
-      type="text"
-      readonly="readonly"
-      name="Score"
-      id=""
-      placeholder="STAR"
-      class="score"
-    />
   </body>
 </html>

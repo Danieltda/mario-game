@@ -8,6 +8,7 @@ class Player {
     this.rightBoundary = CANVAS_WIDTH - this.width;
     this.bottomBoundary = CANVAS_HEIGHT - this.height;
     this.jumps = 10;
+    this.health = 2;
   }
 
   // Called when press up arrow
@@ -18,10 +19,19 @@ class Player {
       this.velocity -= 5;
     }
 
-    // this.jumps -= 1;
-    // console.log(this.jumps);
+    if (this.jumps >= 1) {
+      this.jumps -= 1;
 
-    // jumpsLeft.innerText = this.jumps;
+      jumpsLeft.innerText = this.jumps;
+    }
+
+    if (this.jumps <= 5) {
+      jumpsLeftFullText.style.color = "orange";
+    }
+
+    if (this.jumps === 0) {
+      jumpsLeftFullText.style.color = "red";
+    }
   }
 
   draw() {
@@ -40,7 +50,7 @@ class Player {
     // }
 
     // Logic for the starting position block
-    if (this.x < 218 && this.y > 300 && this.y < 350) {
+    if (this.x < 218 && this.y > 300 && this.y < 330) {
       this.velocity = 0;
       this.y = 310;
     }
@@ -63,7 +73,13 @@ class Player {
       this.y = 380;
     }
 
-    if (this.y >= 470) {
+    //brick numer 5
+    if (this.x >= 1020 && this.x < 1100 && this.y > 270 && this.y < 300) {
+      this.velocity = 0;
+      this.y = 280;
+    }
+
+    if (this.y >= 460) {
       //if charachter hits the flames, it will jump up, deduct 1 point from health;
       this.burn();
       // this.y = this.floor;
@@ -71,7 +87,7 @@ class Player {
       if (this.y >= 430 && this.y < 80) {
         !this.jump();
       }
-      this.health();
+      this.healths();
     }
   }
 
@@ -115,18 +131,24 @@ class Player {
   }
 
   burn() {
-    if (this.y >= 470) {
+    if (this.y >= 460) {
       let burnSound = document.getElementsByClassName("burn")[0];
       burnSound.play();
     }
   }
-
-  health() {
-    health--;
-    console.log(health);
-    if (health < 0) {
-      // this.death();
+  healths() {
+    this.health--;
+    healthPlayer.innerText = this.health;
+    if (this.health <= 1) {
+      healthPlayerFullText.style.color = "orange";
     }
+    if (this.health === 0) {
+      healthPlayerFullText.style.color = "red";
+    }
+    console.log(health);
+    // if (health < 0) {
+    //   // this.death();
+    // }
   }
 
   //   death() {

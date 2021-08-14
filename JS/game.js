@@ -12,6 +12,8 @@ class Game {
     this.background.playSound();
     this.background.draw();
     this.player.draw();
+    jumpsLeft.innerText = this.player.jumps;
+    healthPlayer.innerText = this.player.health;
 
     // movement player left and right
     if (keyIsDown(LEFT_ARROW)) {

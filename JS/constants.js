@@ -1,4 +1,4 @@
-const CANVAS_HEIGHT = 600;
+const CANVAS_HEIGHT = 580;
 
 const CANVAS_WIDTH = 1200;
 let bgImage;
@@ -21,4 +21,7 @@ let health = 2;
 let spacebarPressed = [];
 
 const getButton = document.getElementsByClassName("game-instructions");
-const jumpsLeft = document.getElementsByClassName("jumpsleft");
+let jumpsLeft = document.querySelector("h6 span");
+let healthPlayer = document.querySelector("h5 span");
+let jumpsLeftFullText = document.querySelector("h6");
+let healthPlayerFullText = document.querySelector("h5");

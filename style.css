@@ -2,6 +2,23 @@
   background-color: rgb(55, 155, 232);
 }
 
+.rowFormat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: -20px;
+}
+
+.jumps {
+  margin-top: -20px;
+  color: greenyellow;
+}
+
+.health {
+  margin-top: -20px;
+  color: greenyellow;
+}
+
 .game-instructions {
   background-color: white;
   color: black;
