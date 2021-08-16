@@ -4,12 +4,22 @@ class Game {
     this.player = new Player();
   }
 
+  restartGame() {
+    if (isLooping()) {
+      return;
+    }
+
+    loop();
+  }
+
   setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
   }
 
   draw() {
-    this.background.playSound();
+    if (stopBackgroundSound === true) {
+      this.background.playSound();
+    }
     this.background.draw();
     this.player.draw();
     jumpsLeft.innerText = this.player.jumps;

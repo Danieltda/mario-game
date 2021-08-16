@@ -17,10 +17,14 @@ function preload() {
   brick3 = loadImage("./assets/brick 3.JPG");
   brick4 = loadImage("./assets/brick2.JPG");
   brickQuestionMark = loadImage("./assets/brickQuestionMark.JPG");
+  star = loadImage("./assets/star3.png");
 
   // leftMario = loadImage("/assets/leftMario.png");
 }
 
 function keyPressed() {
   game.keyPressed();
+  if (keyCode === restartGame) {
+    game.restartGame();
+  }
 }

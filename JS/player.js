@@ -48,6 +48,12 @@ class Player {
     // if (this.x > 100) {
     //   image(mario, this.x, 310, this.width, this.height);
     // }
+    if (this.x >= 1025 && this.x < 1095 && this.y > 150 && this.y < 210) {
+      image(star, 1050, 120, 70, 70);
+      this.x = 1050;
+      this.y = 180;
+      this.velocity = 0;
+    }
 
     // Logic for the starting position block
     if (this.x < 218 && this.y > 300 && this.y < 330) {
@@ -77,6 +83,14 @@ class Player {
     if (this.x >= 1020 && this.x < 1100 && this.y > 270 && this.y < 300) {
       this.velocity = 0;
       this.y = 280;
+    }
+
+    //hit the question mark, play sound
+    if (this.x >= 1025 && this.x < 1095 && this.y > 150 && this.y < 230) {
+      stopBackgroundSound = false;
+      this.soundCoin();
+      coinChange.style.borderColor = "green";
+      coinChange.placeholder = "STAR COLLECTED!";
     }
 
     if (this.y >= 460) {
@@ -130,12 +144,19 @@ class Player {
     jumpSound.play();
   }
 
+  soundCoin() {
+    let soundCoin = document.getElementsByClassName("coin")[0];
+    soundCoin.play();
+    stopBackgroundSound = true;
+  }
+
   burn() {
     if (this.y >= 460) {
       let burnSound = document.getElementsByClassName("burn")[0];
       burnSound.play();
     }
   }
+
   healths() {
     this.health--;
     healthPlayer.innerText = this.health;
