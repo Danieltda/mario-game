@@ -5,7 +5,7 @@
 .rowFormat {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-bottom: -20px;
 }
 
@@ -24,6 +24,8 @@
   color: black;
   margin-bottom: 3px;
   border-color: yellow;
+  font-size: 1.25rem;
+  margin-top: 10px;
 }
 
 .score {
@@ -31,17 +33,32 @@
   border-color: RED;
 }
 
+.health-title {
+  font-size: 1.2rem;
+}
+
+.total-jumps {
+  font-size: 1rem;
+}
+
+#starCollected {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-right: 500px;
+}
+
 .modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 40%;
   transform: translate(-50%, -50%) scale(0);
   transform: 200ms ease-in-out;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 10;
   background-color: rgb(55, 155, 232);
-  width: 500px;
+  width: 700px;
+  height: 250px;
   max-width: 80%;
 }
 

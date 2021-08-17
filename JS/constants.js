@@ -1,6 +1,6 @@
-const CANVAS_HEIGHT = 580;
+const CANVAS_HEIGHT = 800;
 
-const CANVAS_WIDTH = 1200;
+const CANVAS_WIDTH = 1400;
 let bgImage;
 let song;
 let mario;
