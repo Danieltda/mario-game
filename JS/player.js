@@ -159,14 +159,16 @@ class Player {
 
   healths() {
     this.health--;
+    game.restartGame();
     healthPlayer.innerText = this.health;
     if (this.health <= 1) {
       healthPlayerFullText.style.color = "orange";
     }
     if (this.health === 0) {
       healthPlayerFullText.style.color = "red";
+      noLoop();
     }
-    console.log(health);
+    console.log(this.health);
     // if (health < 0) {
     //   // this.death();
     // }

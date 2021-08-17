@@ -10,12 +10,36 @@
   </head>
   <body>
     <div class="rowFormat">
-      <div><button class="game-instructions">Game instructions</button></div>
+      <div>
+        <button data-modal-target="#modal" class="game-instructions">
+          Game instructions
+        </button>
+      </div>
+      <div class="modal active" id="modal">
+        <div class="modal-header">
+          <div class="title">Game Instructions</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            The goal is to collect the STAR! Be aware, you only have limited
+            amount of jumps! And hitting the flames will put you on fire! Make
+            sure you have two jumps left at the end!
+          </p>
+          <ul>
+            <li>Press RIGHT arrow to move right</li>
+            <li>Press LEFT arrow to move left</li>
+            <li>Press SPACEBAR to jump</li>
+            <li>Press F5 to restart the game</li>
+          </ul>
+        </div>
+      </div>
+      <div id="overlay"></div>
       <div class="health">
-        <h5>Health: <span></span></h5>
+        <h5>HEALTH: <span></span></h5>
       </div>
       <div class="jumps">
-        <h6>Total jumps left: <span></span></h6>
+        <h6>TOTAL JUMPS LEFT: <span></span></h6>
       </div>
       <div>
         <input
@@ -34,9 +58,9 @@
     <audio src="./assets/sm64_happy_message.wav" class="coin"></audio>
     <script src="./JS/constants.js"></script>
     <script src="./JS/background.js"></script>
-    <script src="./JS/obstacle.js"></script>
     <script src="./JS/player.js"></script>
     <script src="./JS/game.js"></script>
     <script src="./main.js"></script>
+    <script src="./JS/gameinstructions.js"></script>
   </body>
 </html>

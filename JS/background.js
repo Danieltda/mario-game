@@ -28,4 +28,9 @@ class Background {
     var audio = document.getElementsByTagName("audio")[0];
     audio.play();
   }
+
+  stopSound() {
+    let stopAudio = document.getElementsByTagName("audio")[0];
+    stopAudio.pause();
+  }
 }
