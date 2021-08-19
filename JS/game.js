@@ -17,9 +17,6 @@ class Game {
   }
 
   draw() {
-    if (stopBackgroundSound === true) {
-      this.background.playSound();
-    }
     this.background.draw();
     this.player.draw();
     jumpsLeft.innerText = this.player.jumps;
@@ -33,15 +30,22 @@ class Game {
     if (keyIsDown(RIGHT_ARROW)) {
       this.player.x += 3;
     }
+    // if (frameCount % 600 === 0) {
+    //   // each 10 seconds
+    //   console.log("GAME OVER, COUNT POINTS");
+    //   noLoop(); // stops the loop
+    // }
   }
 
   keyPressed() {
-    if (spacebarPressed.length < 10) {
+    if (spaceBar == 32) {
       if (keyCode === spaceBar) {
-        this.player.jumpSoundUp();
-        this.player.jump();
-      } else if (spacebarPressed.length >= 10) {
-        spacebarPressed = [];
+        if (spacebarPressed.length < 10) {
+          this.player.jumpSoundUp();
+          this.player.jump();
+        } else if (spacebarPressed.length >= 10) {
+          this.player.marioTiredSound();
+        }
       }
     }
 

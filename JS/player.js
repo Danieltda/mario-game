@@ -30,6 +30,7 @@ class Player {
     }
 
     if (this.jumps === 0) {
+      jumpsLeftFullText.innerText = "YOU CAN'T JUMP ANYMORE!";
       jumpsLeftFullText.style.color = "red";
     }
   }
@@ -87,10 +88,16 @@ class Player {
 
     //hit the question mark, play sound
     if (this.x >= 1025 && this.x < 1095 && this.y > 150 && this.y < 230) {
+      spaceBar = 0;
       stopBackgroundSound = false;
+      this.stopSound();
       this.soundCoin();
       coinChange.style.borderColor = "green";
       coinChange.placeholder = "STAR COLLECTED!";
+      if (frameCount % 400 === 0) {
+        image(gameWinner, 400, 0, 500, 500);
+        noLoop();
+      }
     }
 
     if (this.y >= 460) {
@@ -159,19 +166,37 @@ class Player {
 
   healths() {
     this.health--;
-    game.restartGame();
     healthPlayer.innerText = this.health;
     if (this.health <= 1) {
       healthPlayerFullText.style.color = "orange";
     }
     if (this.health === 0) {
+      spaceBar = 0;
       healthPlayerFullText.style.color = "red";
+      stopBackgroundSound = false;
+      this.stopSound();
+      this.gameOverSound();
+      image(gameOver, 0, 0, 1400, 800);
       noLoop();
     }
-    console.log(this.health);
     // if (health < 0) {
     //   // this.death();
     // }
+  }
+
+  stopSound() {
+    let stopAudio = document.getElementsByTagName("audio")[0];
+    stopAudio.pause();
+  }
+
+  gameOverSound() {
+    let gameOverSounds = document.getElementsByClassName("game-over")[0];
+    gameOverSounds.play();
+  }
+
+  marioTiredSound() {
+    let marioTired = document.getElementsByClassName("tired")[0];
+    marioTired.play();
   }
 
   //   death() {

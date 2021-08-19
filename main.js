@@ -18,8 +18,8 @@ function preload() {
   brick4 = loadImage("./assets/brick2.JPG");
   brickQuestionMark = loadImage("./assets/brickQuestionMark.JPG");
   star = loadImage("./assets/star3.png");
-
-  // leftMario = loadImage("/assets/leftMario.png");
+  gameOver = loadImage("./assets/gameover.jpg");
+  gameWinner = loadImage("./assets/mariowinn.png");
 }
 
 function keyPressed() {
@@ -27,4 +27,8 @@ function keyPressed() {
   if (keyCode === restartGame) {
     game.restartGame();
   }
+
+  restartGames.addEventListener("click", () => {
+    window.location.href = window.location.href;
+  });
 }

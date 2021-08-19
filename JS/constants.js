@@ -8,6 +8,8 @@ let leftMario;
 let lava;
 let brick;
 let star;
+let gameOver;
+let gameWinner;
 
 const GRAVITY = 0.3;
 
@@ -15,7 +17,7 @@ const upArrow = 38;
 const downArrow = 40;
 const leftArrow = 37;
 const rightArrow = 39;
-const spaceBar = 32;
+let spaceBar = 32;
 
 let health = 2;
 
@@ -31,3 +33,5 @@ let coinChange = document.getElementById("starCollected");
 let stopBackgroundSound = true;
 
 const restartGame = 144;
+
+const restartGames = document.getElementById("restart-game");
